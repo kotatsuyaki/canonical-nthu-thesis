@@ -1,0 +1,7 @@
+[package]
+name = "nthu-thesis"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["kotatsuyaki <https://blog.kotatsu.dev>"]
+license = "MIT"
+description = "A template for master theses and doctoral dissertations for NTHU (National Tsing Hua University)."
