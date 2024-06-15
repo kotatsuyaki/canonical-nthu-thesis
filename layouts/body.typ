@@ -1,6 +1,7 @@
 #import "../utils/cover-with-rect.typ": cover-with-white-rect
 
 #let body(it) = {
+    counter(page).update(0)
     set page(
 	margin: (top: 1.75in, left: 2in, right: 1in, bottom: 1in),
 	background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.5in, height: 1.5in)),
@@ -35,8 +36,46 @@
     set par(
 	leading: 1.5em,
 	first-line-indent: 2em,
+	linebreaks: "optimized",
     )
     set heading(numbering: "1.1.1")
+    show heading: it => locate(loc => {
+	let size = if it.level == 2 {
+	    18pt
+	} else {
+	    14pt
+	}
+	block(width: 100%, {
+	    set text(size: size)
+	    // Collapse 1em vertically if there is a parent heading close enough above.
+	    // Otherwise, space 1em vertically.
+	    let all-prev-headings = query(selector(heading).before(loc), loc)
+	    if all-prev-headings.len() > 1 {
+		let prev-heading = all-prev-headings.at(-2)
+		let is-same-page = prev-heading.location().page() == it.location().page()
+		let is-close = prev-heading.location().position().y + 250pt > it.location().position().y
+		let is-parent = prev-heading.level == it.level - 1
+		if (is-same-page and is-close and is-parent) {
+		    v(-1em)
+		} else {
+		    v(1em)
+		}
+	    } else {
+		v(1em)
+	    }
+	    box(
+		width: 100%,
+		stack(
+		    dir: ltr,
+		    counter(heading).display(it.numbering),
+		    h(1em),
+		    it.body
+		)
+	    )
+	    v(1em)
+	})
+    })
+
     show heading.where(
 	level: 1,
     ): it => {
@@ -59,7 +98,6 @@
 	    })
 	}
     }
-    counter(page).update(1)
 
     it
 }

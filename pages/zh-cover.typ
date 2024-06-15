@@ -68,7 +68,7 @@
 )
 
 
-#let cover-page(
+#let zh-cover-page(
     info: (:),
 ) = page(
     paper: "a4",
@@ -91,7 +91,7 @@
 		    cover-titles(info.title_zh, info.title_en, size: 16pt, spacing: 1cm),
 		    v(1fr),  // This spacing makes the whole stack fill exactly 100% its parent block.
 		    cover-author-info(
-			info.department,
+			info.department_zh,
 			info.id,
 			info.author_zh,
 			info.author_en,
