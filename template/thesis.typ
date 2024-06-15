@@ -1,4 +1,4 @@
-#import "@local/nthu-thesis:0.1.0": cover-page, content, fake-zh-acknowledgements, fake-zh-abstract
+#import "@local/nthu-thesis:0.1.0": cover-page, preface, body, fake-zh-acknowledgements, fake-zh-abstract
 
 #cover-page(
     info: (
@@ -16,11 +16,12 @@
     )
 )
 
-#show: content
+
+#show: preface
+
 
 = 摘要
 #fake-zh-abstract
-
 #pagebreak()
 
 
@@ -31,3 +32,30 @@
 
 = 誌謝
 #fake-zh-acknowledgements
+#pagebreak()
+
+
+#outline(indent: auto)
+
+
+#show: body
+
+= Introduction
+#lorem(300)
+= Background
+== Some important background
+#lorem(200)
+== Some previous works
+#lorem(200)
+= Methods
+== An excellent method
+#lorem(200)
+== Another complimentary good method
+#lorem(200)
+= Experiments
+== Setup
+#lorem(200)
+== The results
+#lorem(200)
+= Conclusion
+#lorem(300)

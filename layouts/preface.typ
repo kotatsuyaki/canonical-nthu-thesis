@@ -1,6 +1,6 @@
 #import "../utils/cover-with-rect.typ": cover-with-white-rect
 
-#let content(it) = {
+#let preface(it) = {
     set page(
 	margin: (top: 1.75in, left: 2in, right: 1in, bottom: 1in),
 	background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.5in, height: 1.5in)),
@@ -24,7 +24,7 @@
 		set text(size: 24pt)
 		v(3em)
 		it.body
-		v(1.5em)
+		v(2em)
 	    })
 	} else {
 	    block(width: 100%, {
@@ -33,10 +33,18 @@
 		text([Chapter ] + counter(heading).display(it.numbering))
 		linebreak()
 		it.body
-		v(1.5em)
+		v(2em)
 	    })
 	}
     }
+    show outline.entry.where(
+	level: 1,
+    ): it => {
+	strong(it.body)
+	h(1fr)
+	strong(it.page)
+    }
+
     counter(page).update(1)
 
     it
