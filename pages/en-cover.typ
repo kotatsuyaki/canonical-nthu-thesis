@@ -30,26 +30,26 @@
     margin: (top: 1.75in, left: 1in, right: 1in, bottom: 2in),
     background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.5in, height: 1.5in)),
     [
-	#set text(
-	    font: ("New Computer Modern", "TW-MOE-Std-Kai"),
-	    size: 14pt,
-	)
+        #set text(
+            font: ("New Computer Modern", "TW-MOE-Std-Kai"),
+            size: 14pt,
+        )
 
-	#align(
-	    horizon + center,
-	    block(
-		height: 100%,
-		stack(
-		    dir: ttb,
-		    strong(info.title-en),
-		    v(1.5in),
-		    [#info.department-en \ National Tsing Hua University \ Hsin-Chu, Taiwan 300, Taiwan],
-		    v(1.5in),
-		    cover-author-info(info.department-en, info.author-en, info.supervisor-en),
-		    v(1fr),
-		    info.date-en,
-		)
-	    )
-	)
+        #align(
+            horizon + center,
+            block(
+                height: 100%,
+                stack(
+                    dir: ttb,
+                    strong(info.title-en),
+                    v(1.5in),
+                    [#info.department-en \ National Tsing Hua University \ Hsin-Chu, Taiwan 300, Taiwan],
+                    v(1.5in),
+                    cover-author-info(info.department-en, info.author-en, info.supervisor-en),
+                    v(1fr),
+                    info.date-en,
+                )
+            )
+        )
     ]
 )

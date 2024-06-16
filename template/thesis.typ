@@ -79,11 +79,11 @@ This template for master theses / doctoral dissertations uses Typst @madje2022pr
 == An excellent method
 #figure(
     table(
-	columns: 4,
-	table.header([], [Apples], [Bananas], [Cherries]),
-	[Alice], [1.0], [2.0], [3.0],
-	[Bob], [1.5], [1.0], [0.5],
-	[Eve], [3.5], [7.5], [1.2],
+        columns: 4,
+        table.header([], [Apples], [Bananas], [Cherries]),
+        [Alice], [1.0], [2.0], [3.0],
+        [Bob], [1.5], [1.0], [0.5],
+        [Eve], [3.5], [7.5], [1.2],
     ),
     caption: [A dummy table to populate the table index page],
     placement: bottom,
