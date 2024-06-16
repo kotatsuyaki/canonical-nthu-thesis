@@ -27,6 +27,7 @@
 = 摘要
 此論文模板使用Typst @madje2022programmable\標記語言排版。請參閱隨附的README文件以及位於https://typst.app/docs/的文檔了解如何使用Typst。
 
+// Fake abstract text.  Delete it and fill in your actual abstract.
 #fake-zh-abstract
 #pagebreak()
 
@@ -34,11 +35,13 @@
 = Abstract
 This template for master theses / doctoral dissertations uses Typst @madje2022programmable.  Refer to the README file and the upstream documentations at https://typst.app/docs/ to know more about Typst.
 
+// Fake generic text.  Delete it and fill in your actual abstract.
 #lorem(150)
 #pagebreak()
 
 
 = 誌謝
+// Fake acknowledgements text.  Delete it and fill in your actual acknowledgements.
 #fake-zh-acknowledgements
 #pagebreak()
 
