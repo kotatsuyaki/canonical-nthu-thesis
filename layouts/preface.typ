@@ -52,6 +52,3 @@
 
     it
 }
-
-
-#let preface(margin: (top: 1.75in, left: 2in, right: 1in, bottom: 2in)) = preface-impl.with(margin: margin)

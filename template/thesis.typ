@@ -1,22 +1,29 @@
-#import "@preview/canonical-nthu-thesis:0.1.0": cover-pages, outline-pages, preface, body
+#import "@preview/canonical-nthu-thesis:0.1.0": setup-thesis
 
-#let info = (
-    degree: "master",
-    title-zh: [一個標題有點長的 \ 有趣的研究],
-    title-en: [An Interesting Research \ With a Somewhat Long Title],
-    department-zh: "某學系",
-    department-en: "Mysterious Department",
-    id: "012345678",
-    author-zh: "張三",
-    author-en: "San Chang",
-    supervisor-zh: "李四 教授",
-    supervisor-en: "Prof. Si Lee",
-    year-zh: "一一三",
-    month-zh: "七",
-    date-en: "July 2024",
+#let (
+    doc, cover-pages, preface, outline-pages, body,
+) = setup-thesis(
+    info: (
+	degree: "master",
+	title-zh: [一個標題有點長的 \ 有趣的研究],
+	title-en: [An Interesting Research \ With a Somewhat Long Title],
+	department-zh: "某學系",
+	department-en: "Mysterious Department",
+	id: "012345678",
+	author-zh: "張三",
+	author-en: "San Chang",
+	supervisor-zh: "李四 教授",
+	supervisor-en: "Prof. Si Lee",
+	year-zh: "一一三",
+	month-zh: "七",
+	date-en: "July 2024",
+    ),
+    style: (
+	margin: (top: 1.75in, left: 2in, right: 1in, bottom: 2in),
+    ),
 )
 
-#cover-pages(info: info)
+#cover-pages()
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

@@ -22,19 +22,10 @@ This template uses the official fonts from the Ministry of Education of Taiwan (
 ### Editing
 
 All the content of the thesis are in the `thesis.typ` file.
-The metadata shown in the cover pages are described in the `#let info = (...)` dictionary in `thesis.typ`.
-Replace the values with your own metadata.
+In the beginning of `thesis.typ`, there is a call to the `setup-thesis(info, style)` function that configures the metadata (the titles and the author etc.) and the styling of the thesis document.
+Replace the values with your own.
 
-所有論文內容皆位於`thesis.typ`檔案內。顯示在論文中英封面上的資訊由`thesis.typ`中的`#let info = (...)`字典而來。
-
------
-
-The library (`lib.typ`) exposes some definitions that defines the styling and the contents of the thesis.
-
-- `cover-pages(info)`: Generates the cover pages in Traditional Chinese and English.  The `info` dictionary contains the metadata of the thesis.
-- `outline-pages`: The outline pages for the chapters and sections, the figures, and the tables.
-- `body(margin)`: Generates a function to be used as an "everything" show rule.  Example: `#show: body(margin: (x: 1in, y: 2in))` starts the body part of the thesis with the horizontal and vertical margins overridden as 1 inch and 2 inches, respectively.
-- `preface(margin)`: Generates a function to be used as an "everything" show rule.
+所有論文內容皆位於`thesis.typ`檔案內。該檔案前段的部分呼叫了`setup-thesis(info, style)`函式，設置論文的雜項資訊（標題及作者等）及外觀選項，請置換為自己的資訊。
 
 
 ### Local usage

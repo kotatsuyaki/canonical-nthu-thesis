@@ -136,6 +136,3 @@
 
     it
 }
-
-
-#let body(margin: (top: 1.75in, left: 2in, right: 1in, bottom: 2in)) = body-impl.with(margin: margin)
