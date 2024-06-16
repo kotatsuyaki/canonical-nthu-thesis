@@ -2,9 +2,10 @@
 name = "nthu-thesis"
 version = "0.1.0"
 entrypoint = "lib.typ"
-authors = ["kotatsuyaki <https://blog.kotatsu.dev>"]
+authors = ["kotatsuyaki"]
 license = "MIT"
 description = "A template for master theses and doctoral dissertations for NTHU (National Tsing Hua University)."
+repository = "https://codeberg.org/kotatsuyaki/nthu-thesis"
 keywords = ["NTHU", "National Tsing Hua University", "thesis"]
 categories = ["thesis"]
 
