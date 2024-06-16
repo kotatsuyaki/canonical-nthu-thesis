@@ -11,9 +11,9 @@ A [Typst](https://typst.app/docs/) template for master theses and doctoral disse
 
 ### Local usage
 
-Initialize the template in a directory called `my-thesis`.  This template uses the official fonts from the Ministry of Education of Taiwan (Edukai/TW-MOE-Std-Kai) under `fonts/`, which are required to be installed manually.
+Initialize the template in a directory called `my-thesis`.  This template uses the official fonts from the Ministry of Education of Taiwan (Edukai/TW-MOE-Std-Kai), which are required to be downloaded and installed manually from [language.moe.gov.tw](https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/edukai-5.0.zip).
 
-在名為`my-thesis`的目錄下使用此模板。此模板使用位於`fonts/`目錄下的教育部標準楷書字體（Edukai/TW-MOE-Std-Kai），在編譯文件前需要下載並手動安裝。
+在名為`my-thesis`的目錄下使用此模板。此模板中文部分使用教育部標準楷書字體（Edukai/TW-MOE-Std-Kai），在編譯文件前需要自[language.moe.gov.tw](https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/edukai-5.0.zip)下載並手動安裝。
 
 ```sh
 $ typst init @preview/nthu-thesis:0.1.0 my-thesis
@@ -33,5 +33,3 @@ Replace the values with your own metadata.
 ## License
 
 This project is licensed under the MIT License.
-
-The bundled Edukai font is licensed under CC-BY-ND 3.0 by the Ministry of Education of Taiwan.
