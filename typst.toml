@@ -8,6 +8,7 @@ description = "A template for master theses and doctoral dissertations for NTHU 
 repository = "https://codeberg.org/kotatsuyaki/nthu-thesis"
 keywords = ["NTHU", "National Tsing Hua University", "thesis"]
 categories = ["thesis"]
+exclude = ["thumbnail.png", "covers.png"]
 
 [template]
 path = "template"
