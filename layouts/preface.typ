@@ -6,7 +6,7 @@
 ) = {
     set page(
         margin: margin,
-        background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.5in, height: 1.5in)),
+        background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.95in, height: 1.95in)),
         numbering: "i",
     )
 
