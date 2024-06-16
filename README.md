@@ -11,15 +11,14 @@ A [Typst](https://typst.app/docs/) template for master theses and doctoral disse
 
 ### Local usage
 
-Initialize the template in a directory called `my-thesis`.  This template uses the official fonts from the Ministry of Education of Taiwan (Edukai/TW-MOE-Std-Kai), so the user must specify the font path when compiling.
+Initialize the template in a directory called `my-thesis`.  This template uses the official fonts from the Ministry of Education of Taiwan (Edukai/TW-MOE-Std-Kai) under `fonts/`, which are required to be installed manually.
 
-在名為`my-thesis`的目錄下使用此模板。此模板使用教育部標準楷書字體（Edukai/TW-MOE-Std-Kai），故編譯時需以`--font-path ./fonts/`聲明字體路徑。
+在名為`my-thesis`的目錄下使用此模板。此模板使用位於`fonts/`目錄下的教育部標準楷書字體（Edukai/TW-MOE-Std-Kai），在編譯文件前需要下載並手動安裝。
 
 ```sh
 $ typst init @preview/nthu-thesis:0.1.0 my-thesis
 $ cd my-thesis
-# Use the fonts under ./fonts/
-$ typst watch --font-path ./fonts/ thesis.typ
+$ typst watch thesis.typ
 ```
 
 -----
