@@ -4,6 +4,9 @@ A [Typst](https://typst.app/docs/) template for master theses and doctoral disse
 
 國立清華大學碩士（博士）論文[Typst](https://typst.app/docs/)模板。
 
+- [Typst Universe Package](https://typst.app/universe/package/canonical-nthu-thesis)
+- [Codeberg Repo](https://codeberg.org/kotatsuyaki/canonical-nthu-thesis)
+
 ![](./covers.png)
 
 
@@ -32,6 +35,11 @@ $ typst init @preview/canonical-nthu-thesis:0.1.0 my-thesis
 $ cd my-thesis
 $ typst watch thesis.typ
 ```
+
+
+## Development
+
+Development and issue tracking happens on the [repository on Codeberg](https://codeberg.org/kotatsuyaki/canonical-nthu-thesis).
 
 
 ## License
