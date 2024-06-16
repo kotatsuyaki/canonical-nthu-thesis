@@ -1,4 +1,4 @@
-#import "@local/nthu-thesis:0.1.0": zh-cover-page, en-cover-page, outline-pages, preface, body, fake-zh-acknowledgements, fake-zh-abstract
+#import "@local/nthu-thesis:0.1.0": cover-pages, outline-pages, preface, body, fake-zh-acknowledgements, fake-zh-abstract
 
 #let info = (
     degree: "master",
@@ -16,10 +16,10 @@
     date-en: "July 2024",
 )
 
-#zh-cover-page(info: info)
-#en-cover-page(info: info)
+#cover-pages(info: info)
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 // The preface, which contains the abstract, the acknowledgements, and the table(s) of contents.
 // 前言部分，包含摘要、誌謝、大綱及圖表目錄。
 #show: preface
@@ -46,6 +46,7 @@ This template for master theses / doctoral dissertations uses Typst @madje2022pr
 #outline-pages
 
 
+///////////////////
 // The main matter.
 // 本文部分。
 #show: body
