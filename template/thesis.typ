@@ -54,7 +54,7 @@ This template for master theses / doctoral dissertations uses Typst @madje2022pr
 // Example demonstrating how to include an image.
 #figure(
     image(width: 50%, "cat.jpg"),
-    caption: [A _meaningless_ figure.],
+    caption: [A meaningless figure @5206848 to populate the image list],
     placement: bottom,
 )
 #lorem(300)
@@ -77,7 +77,7 @@ This template for master theses / doctoral dissertations uses Typst @madje2022pr
 	[Bob], [1.5], [1.0], [0.5],
 	[Eve], [3.5], [7.5], [1.2],
     ),
-    caption: [A meaningless table.],
+    caption: [A dummy table to populate the table index page],
     placement: bottom,
 )
 #lorem(200)

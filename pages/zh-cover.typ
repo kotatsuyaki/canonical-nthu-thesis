@@ -44,28 +44,43 @@
     author_en,
     supervisor_zh,
     supervisor_en,
-) = grid(
-    columns: (3cm, 0.8cm, 11cm),
-    rows: (30pt, 30pt, 30pt),
-    align: (right, left, auto),
-    text(size: 16pt, tracking: 0.5em, [系所別]), text(size: 16pt, [：]), grid.cell(stroke: (bottom: (paint: black, thickness: 0.4pt)), text(size: 16pt, tracking: 0.5em, department)),
-    text(size: 16pt, [學號姓名]), text(size: 16pt, [：]), grid.cell(stroke: (bottom: (paint: black, thickness: 0.4pt)), text(size: 16pt, id + author_zh + "（" + author_en + "）")),
-    text(size: 16pt, [指導教授]), text(size: 16pt, [：]), grid.cell(stroke: (bottom: (paint: black, thickness: 0.4pt)), text(size: 16pt, supervisor_zh + "（" + supervisor_en + "）")),
-)
+) = {
+    set text(size: 16pt)
+    grid(
+	columns: (auto, 1em, 11cm),
+	rows: (30pt, 30pt, 30pt),
+	align: (right, left, auto),
+	// Row 1
+	text(tracking: 0.5em, [系所別]),
+	text([：]),
+	grid.cell(stroke: (bottom: (paint: black, thickness: 0.4pt)), text(tracking: 0.5em, department)),
+	// Row 2
+	text([學號姓名]),
+	text([：]),
+	grid.cell(stroke: (bottom: (paint: black, thickness: 0.4pt)), text(id + author_zh + "（" + author_en + "）")),
+	// Row 3
+	text([指導教授]),
+	text([：]),
+	grid.cell(stroke: (bottom: (paint: black, thickness: 0.4pt)), text(supervisor_zh + "（" + supervisor_en + "）")),
+    )
+}
 
 
 #let cover-year-month(
     year_zh,
     month_zh,
-) = stack(
-    dir: ltr,
-    spacing: 12pt,
-    text(size: 16pt, tracking: 0.75em, [中華民國]),
-    text(size: 16pt, year_zh),
-    text(size: 16pt, [年]),
-    text(size: 16pt, month_zh),
-    text(size: 16pt, [月]),
-)
+) = {
+    set text(size: 16pt)
+    stack(
+	dir: ltr,
+	spacing: 0.75em,
+	text(/* Spacing between characters */ tracking: 0.75em, [中華民國]),
+	text(year_zh),
+	text([年]),
+	text(month_zh),
+	text([月]),
+    )
+}
 
 
 #let zh-cover-page(
@@ -84,6 +99,7 @@
 	    horizon + center,
 	    block(
 		height: 100%,
+		// The vertical stack of the content of the cover.
 		stack(
 		    dir: ttb,
 		    cover-heading(degree: info.degree, size: 26pt, tracking: 0.5em),

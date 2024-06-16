@@ -1,44 +1,67 @@
 #import "../utils/cover-with-rect.typ": cover-with-white-rect
 
 #let body(it) = {
-    counter(page).update(0)
+    // Returns whether the current page has a chapter (top-level) heading.
+    let is-chapter-start-page() = {
+	// Find chapter headings on the current page.
+	let all-chapter-headings = query(heading.where(level: 1))
+	let current = counter(page).get()
+	let page-chapter-headings = all-chapter-headings.filter(m => m.location().page() == here().page())
+
+	return page-chapter-headings.len() > 0
+    }
+
+    // Set the page numbering to arabic numerals.
+    //
+    // Although we use custom headers and footers to display the page numbers in the body part,
+    // this is still required to show the page numbers in arabic numerals in the outlines.
+    set page(numbering: "1")
+
     set page(
 	margin: (top: 1.75in, left: 2in, right: 1in, bottom: 1in),
 	background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.5in, height: 1.5in)),
-	numbering: "1",
 	header: context {
-	    // Find chapter headings on the current page (all-chapter-headings).
-	    let all-chapter-headings = query(heading.where(level: 1).after(here()))
-	    let current = counter(page).get()
-	    let page-chapter-headings = all-chapter-headings.filter(m => counter(page).at(m.location()) == current)
-	    let is-chapter-start-page = page-chapter-headings.len() > 0
-
-	    // Show the chapter number, the chapter name, and the page number in the header.
-	    if not is-chapter-start-page {
+	    if not is-chapter-start-page() {
 		let chapter-headings-so-far = query(heading.where(level: 1).before(here()))
 		let chapter-heading = chapter-headings-so-far.last()
-		let chapter-count = counter(heading).at(chapter-heading.location()).at(0)
+		let chapter-number = counter(heading).at(chapter-heading.location()).at(0)
 
-		set text(size: 14pt)
-		smallcaps("Chapter " + str(chapter-count) + ".")
+		// Show the chapter number, the chapter name, and the page number in the header.
+		smallcaps("Chapter " + str(chapter-number) + ".")
 		h(0.75em)
 		smallcaps(chapter-heading.body)
 		h(1fr)
 		counter(page).display()
 	    }
 	},
+	footer: context {
+	    if is-chapter-start-page() {
+		// Show the chapter number centered in the footer.
+		h(0.5fr)
+		counter(page).display()
+		h(0.5fr)
+	    }
+	}
     )
+
+    // Reset the page counter for the body.
+    // TODO: Figure out why is-chapter-start-page returns true for page 2 when this line is moved above.
+    counter(page).update(1)
+
     set text(
 	size: 12pt,
 	font: ("New Computer Modern", "TW-MOE-Std-Kai"),
 	hyphenate: true,
     )
+
     set par(
 	leading: 1.5em,
 	first-line-indent: 2em,
 	linebreaks: "optimized",
     )
+
     set heading(numbering: "1.1.1")
+
     show heading: it => locate(loc => {
 	let size = if it.level == 2 {
 	    18pt
@@ -63,6 +86,8 @@
 	    } else {
 		v(1em)
 	    }
+
+	    // Show the numbering and the body of the heading.
 	    box(
 		width: 100%,
 		stack(
@@ -79,8 +104,14 @@
     show heading.where(
 	level: 1,
     ): it => {
-	pagebreak()
+	// Start a chapter on a new page unless it's the 1st chapter,
+	// in which case it is already on a new page.
+	if counter(heading).get() != (1,) {
+	    pagebreak()
+	}
+
 	if it.numbering == none {
+	    // Show the body of the heading.
 	    block(width: 100%, {
 		set text(size: 24pt)
 		v(3em)
@@ -88,6 +119,7 @@
 		v(2em)
 	    })
 	} else {
+	    // Show "Chapter n" and the body of the heading on 2 separate lines.
 	    block(width: 100%, {
 		set text(size: 24pt)
 		v(3em)
