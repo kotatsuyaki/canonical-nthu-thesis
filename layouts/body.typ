@@ -18,7 +18,7 @@
     set page(numbering: "1")
 
     set page(
-        margin: (top: 1.75in, left: 2in, right: 1in, bottom: 1in),
+        margin: (top: 1.75in, left: 2in, right: 1in, bottom: 1.5in),
         background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.5in, height: 1.5in)),
         header: context {
             if not is-chapter-start-page() {
