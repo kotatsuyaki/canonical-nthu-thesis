@@ -2,18 +2,18 @@
 
 #let info = (
     degree: "master",
-    title_zh: [一個標題有點長的 \ 有趣的研究],
-    title_en: [An Interesting Research \ With a Somewhat Long Title],
-    department_zh: "某學系",
-    department_en: "Mysterious Department",
+    title-zh: [一個標題有點長的 \ 有趣的研究],
+    title-en: [An Interesting Research \ With a Somewhat Long Title],
+    department-zh: "某學系",
+    department-en: "Mysterious Department",
     id: "012345678",
-    author_zh: "張三",
-    author_en: "San Chang",
-    supervisor_zh: "李四 教授",
-    supervisor_en: "Prof. Si Lee",
-    year_zh: "一一三",
-    month_zh: "七",
-    date_en: "July 2024",
+    author-zh: "張三",
+    author-en: "San Chang",
+    supervisor-zh: "李四 教授",
+    supervisor-en: "Prof. Si Lee",
+    year-zh: "一一三",
+    month-zh: "七",
+    date-en: "July 2024",
 )
 
 #zh-cover-page(info: info)

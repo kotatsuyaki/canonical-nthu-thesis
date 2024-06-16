@@ -40,10 +40,10 @@
 #let cover-author-info(
     department,
     id,
-    author_zh,
-    author_en,
-    supervisor_zh,
-    supervisor_en,
+    author-zh,
+    author-en,
+    supervisor-zh,
+    supervisor-en,
 ) = {
     set text(size: 16pt)
     grid(
@@ -57,27 +57,27 @@
 	// Row 2
 	text([學號姓名]),
 	text([：]),
-	grid.cell(stroke: (bottom: (paint: black, thickness: 0.4pt)), text(id + author_zh + "（" + author_en + "）")),
+	grid.cell(stroke: (bottom: (paint: black, thickness: 0.4pt)), text(id + author-zh + "（" + author-en + "）")),
 	// Row 3
 	text([指導教授]),
 	text([：]),
-	grid.cell(stroke: (bottom: (paint: black, thickness: 0.4pt)), text(supervisor_zh + "（" + supervisor_en + "）")),
+	grid.cell(stroke: (bottom: (paint: black, thickness: 0.4pt)), text(supervisor-zh + "（" + supervisor-en + "）")),
     )
 }
 
 
 #let cover-year-month(
-    year_zh,
-    month_zh,
+    year-zh,
+    month-zh,
 ) = {
     set text(size: 16pt)
     stack(
 	dir: ltr,
 	spacing: 0.75em,
 	text(/* Spacing between characters */ tracking: 0.75em, [中華民國]),
-	text(year_zh),
+	text(year-zh),
 	text([年]),
-	text(month_zh),
+	text(month-zh),
 	text([月]),
     )
 }
@@ -104,18 +104,18 @@
 		    dir: ttb,
 		    cover-heading(degree: info.degree, size: 26pt, tracking: 0.5em),
 		    v(1.25in),
-		    cover-titles(info.title_zh, info.title_en, size: 16pt, spacing: 1cm),
+		    cover-titles(info.title-zh, info.title-en, size: 16pt, spacing: 1cm),
 		    v(1fr),  // This spacing makes the whole stack fill exactly 100% its parent block.
 		    cover-author-info(
-			info.department_zh,
+			info.department-zh,
 			info.id,
-			info.author_zh,
-			info.author_en,
-			info.supervisor_zh,
-			info.supervisor_en,
+			info.author-zh,
+			info.author-en,
+			info.supervisor-zh,
+			info.supervisor-en,
 		    ),
 		    v(1in),
-		    cover-year-month(info.year_zh, info.month_zh),
+		    cover-year-month(info.year-zh, info.month-zh),
 		)
 	    )
 	)

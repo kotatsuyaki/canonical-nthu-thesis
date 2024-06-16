@@ -8,18 +8,18 @@
 
 #let cover-author-info(
     department,
-    author_en,
-    supervisor_en,
+    author-en,
+    supervisor-en,
 ) = grid(
     columns: (auto, 0.75em, auto),
     rows: (1.5em, 1.5em),
     align: (right, left, left),
     [Advisor: ],
     "",
-    supervisor_en,
+    supervisor-en,
     [Student: ],
     "",
-    author_en,
+    author-en,
 )
 
 
@@ -41,13 +41,13 @@
 		height: 100%,
 		stack(
 		    dir: ttb,
-		    strong(info.title_en),
+		    strong(info.title-en),
 		    v(1.5in),
-		    [#info.department_en \ National Tsing Hua University \ Hsin-Chu, Taiwan 300, Taiwan],
+		    [#info.department-en \ National Tsing Hua University \ Hsin-Chu, Taiwan 300, Taiwan],
 		    v(1.5in),
-		    cover-author-info(info.department_en, info.author_en, info.supervisor_en),
+		    cover-author-info(info.department-en, info.author-en, info.supervisor-en),
 		    v(1fr),
-		    info.date_en,
+		    info.date-en,
 		)
 	    )
 	)
