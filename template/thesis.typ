@@ -1,4 +1,4 @@
-#import "@preview/nthu-thesis:0.1.0": cover-pages, outline-pages, preface, body
+#import "@preview/canonical-nthu-thesis:0.1.0": cover-pages, outline-pages, preface, body
 
 #let info = (
     degree: "master",

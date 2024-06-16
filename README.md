@@ -1,4 +1,4 @@
-# nthu-thesis
+# canonical-nthu-thesis
 
 A [Typst](https://typst.app/docs/) template for master theses and doctoral dissertations for NTHU (National Tsing Hua University).
 
@@ -28,7 +28,7 @@ Replace the values with your own metadata.
 ### Local usage
 
 ```sh
-$ typst init @preview/nthu-thesis:0.1.0 my-thesis
+$ typst init @preview/canonical-nthu-thesis:0.1.0 my-thesis
 $ cd my-thesis
 $ typst watch thesis.typ
 ```
