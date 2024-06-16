@@ -1,4 +1,4 @@
-#import "@local/nthu-thesis:0.1.0": cover-pages, outline-pages, preface, body, fake-zh-acknowledgements, fake-zh-abstract
+#import "@preview/nthu-thesis:0.1.0": cover-pages, outline-pages, preface, body, fake-zh-acknowledgements, fake-zh-abstract
 
 #let info = (
     degree: "master",
