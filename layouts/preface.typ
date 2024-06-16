@@ -1,8 +1,11 @@
 #import "../utils/cover-with-rect.typ": cover-with-white-rect
 
-#let preface(it) = {
+#let preface-impl(
+    margin: (:),
+    it,
+) = {
     set page(
-        margin: (top: 1.75in, left: 2in, right: 1in, bottom: 1.5in),
+        margin: margin,
         background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.5in, height: 1.5in)),
         numbering: "i",
     )
@@ -49,3 +52,6 @@
 
     it
 }
+
+
+#let preface(margin: (top: 1.75in, left: 2in, right: 1in, bottom: 2in)) = preface-impl.with(margin: margin)

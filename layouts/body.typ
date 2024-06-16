@@ -1,6 +1,9 @@
 #import "../utils/cover-with-rect.typ": cover-with-white-rect
 
-#let body(it) = {
+#let body-impl(
+    margin: (:),
+    it,
+) = {
     // Returns whether the current page has a chapter (top-level) heading.
     let is-chapter-start-page() = {
         // Find chapter headings on the current page.
@@ -18,7 +21,7 @@
     set page(numbering: "1")
 
     set page(
-        margin: (top: 1.75in, left: 2in, right: 1in, bottom: 1.5in),
+        margin: margin,
         background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.5in, height: 1.5in)),
         header: context {
             if not is-chapter-start-page() {
@@ -133,3 +136,6 @@
 
     it
 }
+
+
+#let body(margin: (top: 1.75in, left: 2in, right: 1in, bottom: 2in)) = body-impl.with(margin: margin)
