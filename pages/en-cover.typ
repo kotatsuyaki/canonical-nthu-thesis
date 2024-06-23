@@ -1,6 +1,3 @@
-#import "../utils/cover-with-rect.typ": cover-with-white-rect
-
-
 #set heading(
     numbering: "1.1.1",
 )
@@ -28,7 +25,6 @@
 ) = page(
     paper: "a4",
     margin: (top: 1.75in, left: 1in, right: 1in, bottom: 2in),
-    background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.95in, height: 1.95in)),
     [
         #set text(
             font: ("New Computer Modern", "TW-MOE-Std-Kai"),

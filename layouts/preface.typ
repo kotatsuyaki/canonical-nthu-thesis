@@ -1,19 +1,10 @@
-#import "../utils/cover-with-rect.typ": cover-with-white-rect
-
 #let preface-impl(
     margin: (:),
     it,
 ) = {
     set page(
         margin: margin,
-        background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.95in, height: 1.95in)),
         numbering: "i",
-    )
-
-    set text(
-        size: 12pt,
-        font: ("New Computer Modern", "TW-MOE-Std-Kai"),
-        hyphenate: true,
     )
 
     set par(

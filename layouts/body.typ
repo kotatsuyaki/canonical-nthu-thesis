@@ -1,5 +1,3 @@
-#import "../utils/cover-with-rect.typ": cover-with-white-rect
-
 #let body-impl(
     margin: (:),
     it,
@@ -22,7 +20,6 @@
 
     set page(
         margin: margin,
-        background: cover-with-white-rect(image("../nthu-logo.svg", width: 1.95in, height: 1.95in)),
         header: context {
             if not is-chapter-start-page() {
                 let chapter-headings-so-far = query(heading.where(level: 1).before(here()))
@@ -50,12 +47,6 @@
     // Reset the page counter for the body.
     // TODO: Figure out why is-chapter-start-page returns true for page 2 when this line is moved above.
     counter(page).update(1)
-
-    set text(
-        size: 12pt,
-        font: ("New Computer Modern", "TW-MOE-Std-Kai"),
-        hyphenate: true,
-    )
 
     set par(
         leading: 1.5em,
@@ -112,6 +103,9 @@
         if counter(heading).get() != (1,) {
             pagebreak()
         }
+
+        // Do not justify top-level headings, which have a large font.
+        set par(justify: false)
 
         if it.numbering == none {
             // Show the body of the heading.

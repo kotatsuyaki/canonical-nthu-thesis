@@ -3,6 +3,7 @@
 #import "pages/outlines.typ": outline-pages
 #import "layouts/preface.typ": preface-impl
 #import "layouts/body.typ": body-impl
+#import "layouts/doc.typ": doc-impl
 
 #let cover-pages-impl(info: (:)) = {
     zh-cover-page(info: info)
@@ -38,23 +39,22 @@
     style = (
         // Margin sizes for all non-cover pages.
         margin: (top: 1.75in, left: 2in, right: 1in, bottom: 2in),
+        // Whether to show a list of tables in the `outline-pages()` function.
+        outline-tables: true,
+        // Whether to show a list of figures in the `outline-pages()` function.
+        outline-figures: true,
+        // Whether to show the text "Draft version" and the date on the margin.
+        show-draft-mark: false,
     ) + style
 
-    let doc(it) = {
-        set document(
-            title: info.title-en + " " + info.title-zh,
-            author: info.author-en + " " + info.author-zh,
-            keywords: info.keywords-en + info.keywords-zh,
-        )
-
-        it
-    }
-
     return (
-        doc: doc,
+        doc: doc-impl.with(info: info, show-draft-mark: style.show-draft-mark),
         cover-pages: cover-pages-impl.with(info: info),
         preface: preface-impl.with(margin: style.margin),
-        outline-pages: outline-pages,
+        outline-pages: outline-pages.with(
+            outline-tables: style.outline-tables,
+            outline-figures: style.outline-figures,
+        ),
         body: body-impl.with(margin: style.margin),
     )
 }
