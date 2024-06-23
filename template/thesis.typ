@@ -3,23 +3,33 @@
 #let (
     doc, cover-pages, preface, outline-pages, body,
 ) = setup-thesis(
+    // Metadata of the document, which is used in places such as the cover pages and the PDF properties.
     info: (
-	degree: "master",
-	title-zh: [一個標題有點長的 \ 有趣的研究],
-	title-en: [An Interesting Research \ With a Somewhat Long Title],
-	department-zh: "某學系",
-	department-en: "Mysterious Department",
-	id: "012345678",
-	author-zh: "張三",
-	author-en: "San Chang",
-	supervisor-zh: "李四 教授",
-	supervisor-en: "Prof. Si Lee",
-	year-zh: "一一三",
-	month-zh: "七",
-	date-en: "July 2024",
+        degree: "master",
+        title-zh: [一個標題有點長的 \ 有趣的研究],
+        title-en: [An Interesting Research \ With a Somewhat Long Title],
+        department-zh: "某學系",
+        department-en: "Mysterious Department",
+        id: "012345678",
+        author-zh: "張三",
+        author-en: "San Chang",
+        supervisor-zh: "李四 教授",
+        supervisor-en: "Prof. Si Lee",
+        year-zh: "一一三",
+        month-zh: "七",
+        date-en: "July 2024",
+        keywords-zh: ("關鍵詞", "列表", "範例"),
+        keywords-en: ("example", "keywords", "list"),
     ),
+    // Customizable styling options.
     style: (
-	margin: (top: 1.75in, left: 2in, right: 1in, bottom: 2in),
+        // Margin sizes for all non-cover pages.
+        margin: (top: 1.75in, left: 2in, right: 1in, bottom: 2in),
+        // Whether to show a list of tables/figures in the `outline-pages()` function.
+        outline-tables: true,
+        outline-figures: true,
+        // Whether to show the text "Draft version" and the date on the margin.
+        show-draft-mark: false,
     ),
 )
 
@@ -58,7 +68,7 @@ This template for master theses / doctoral dissertations uses Typst @madje2022pr
 #pagebreak()
 
 
-#outline-pages
+#outline-pages()
 
 
 ///////////////////
