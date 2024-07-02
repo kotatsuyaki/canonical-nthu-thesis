@@ -5,8 +5,8 @@
 #import "layouts/body.typ": body-impl
 #import "layouts/doc.typ": doc-impl
 
-#let cover-pages-impl(info: (:)) = {
-    zh-cover-page(info: info)
+#let cover-pages-impl(info: (:), style: (:)) = {
+    zh-cover-page(info: info, style: style)
     en-cover-page(info: info)
 }
 
@@ -49,11 +49,13 @@
         outline-figures: true,
         // Whether to show the text "Draft version" and the date on the margin.
         show-draft-mark: false,
+        // The row heights of the Chinese cover page.
+        cover-row-heights: (30pt, 30pt, 30pt),
     ) + style
 
     return (
         doc: doc-impl.with(info: info, style: style, show-draft-mark: style.show-draft-mark),
-        cover-pages: cover-pages-impl.with(info: info),
+        cover-pages: cover-pages-impl.with(info: info, style: style),
         preface: preface-impl.with(margin: style.margin),
         outline-pages: outline-pages.with(
             outline-tables: style.outline-tables,

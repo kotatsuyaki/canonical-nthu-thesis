@@ -41,11 +41,12 @@
     author-en,
     supervisor-zh,
     supervisor-en,
+    cover-row-heights: (),
 ) = {
     set text(size: 16pt)
     grid(
-        columns: (auto, 1em, 11cm),
-        rows: (30pt, 30pt, 30pt),
+        columns: (auto, 1em, 4in),
+        rows: cover-row-heights,
         align: (right, left, auto),
         // Row 1
         text(tracking: 0.5em, [系所別]),
@@ -82,6 +83,7 @@
 
 #let zh-cover-page(
     info: (:),
+    style: (:),
 ) = page(
     paper: "a4",
     margin: (top: 1.75in, left: 1in, right: 1in, bottom: 2in),
@@ -108,6 +110,7 @@
                         info.author-en,
                         info.supervisor-zh,
                         info.supervisor-en,
+                        cover-row-heights: style.cover-row-heights,
                     ),
                     v(1in),
                     cover-year-month(info.year-zh, info.month-zh),
