@@ -82,15 +82,8 @@
             }
 
             // Show the numbering and the body of the heading.
-            box(
-                width: 100%,
-                stack(
-                    dir: ltr,
-                    counter(heading).display(it.numbering),
-                    h(1em),
-                    it.body
-                )
-            )
+            set par(justify: false)
+            grid(columns: 2, gutter: 1em, counter(heading).display(it.numbering), it.body)
             v(1em)
         })
     })
