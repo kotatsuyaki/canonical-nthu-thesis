@@ -27,7 +27,6 @@
     margin: (top: 1.75in, left: 1in, right: 1in, bottom: 2in),
     [
         #set text(
-            font: ("New Computer Modern", "TW-MOE-Std-Kai"),
             size: 14pt,
         )
 

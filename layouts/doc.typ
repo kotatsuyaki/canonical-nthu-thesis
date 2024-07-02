@@ -2,6 +2,7 @@
 
 #let doc-impl(
     info: (:),
+    style: (:),
     show-draft-mark: true,
     it
 ) = {
@@ -13,9 +14,11 @@
 
     set text(
         size: 12pt,
-        font: ("New Computer Modern", "TW-MOE-Std-Kai"),
+        font: style.fonts,
         hyphenate: true,
     )
+
+    show math.equation: set text(font: style.math-fonts)
 
     set par(
         justify: true,

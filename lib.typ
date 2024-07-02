@@ -39,6 +39,10 @@
     style = (
         // Margin sizes for all non-cover pages.
         margin: (top: 1.75in, left: 2in, right: 1in, bottom: 2in),
+        // The fonts used throughout the thesis.
+        fonts: ("New Computer Modern", "TW-MOE-Std-Kai"),
+        // The math equation fonts used throughout the thesis.
+        math-fonts: ("New Computer Modern"),
         // Whether to show a list of tables in the `outline-pages()` function.
         outline-tables: true,
         // Whether to show a list of figures in the `outline-pages()` function.
@@ -48,7 +52,7 @@
     ) + style
 
     return (
-        doc: doc-impl.with(info: info, show-draft-mark: style.show-draft-mark),
+        doc: doc-impl.with(info: info, style: style, show-draft-mark: style.show-draft-mark),
         cover-pages: cover-pages-impl.with(info: info),
         preface: preface-impl.with(margin: style.margin),
         outline-pages: outline-pages.with(
