@@ -28,7 +28,7 @@
         background: {
             image("../nthu-logo.svg", width: 1.95in, height: 1.95in)
             if show-draft-mark {
-                set text(size: 18pt, fill: gray)
+                set text(size: 18pt, fill: gray, weight: "regular")
                 place(
                     top + right,
                     dx: -1em,
